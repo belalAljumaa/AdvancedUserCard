@@ -1,0 +1,335 @@
+:root {
+  --main-color: #2eca7f;
+  --bg-color: #eee;
+  --white: #fff;
+  --gray-text: #777;
+  --dark-text: #494e53;
+  --radius: 10px;
+  --transition: 0.3s ease;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+section {
+  background-color: var(--white);
+  border-radius: var(--radius) var(--radius) 0 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section .container {
+  padding: 0;
+}
+
+section .container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  padding: 15px 25px;
+  background-color: var(--main-color);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+section .container .header .logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section .container .header .logo .image img {
+  width: 80px;
+  max-width: 100%;
+  border-radius: 50%;
+  border: 4px solid var(--white);
+}
+
+section .container .header .logo .name {
+  margin-left: 15px;
+  color: var(--white);
+}
+
+section .container .header .logo .name h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+section .container .header .logo .name p {
+  font-size: 16px;
+}
+
+section .container .header nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+section .container .header nav p {
+  font-size: 16px;
+  color: var(--white);
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+section .container .header nav ul li:not(:last-child) {
+  margin-right: 10px;
+}
+
+section .container .header nav ul li a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: var(--white);
+  border-radius: 50%;
+  color: var(--main-color);
+}
+
+section .container .body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+}
+
+section .container .body .menu {
+  text-transform: capitalize;
+  border-right: 1px solid #eee;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section .container .body .menu ul {
+  list-style: none;
+}
+
+section .container .body .menu ul li {
+  margin-bottom: 5px;
+}
+
+section .container .body .menu ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  display: flex;
+  place-items: center;
+  margin-left: 10px;
+  color: var(--dark-text);
+  position: relative;
+}
+
+section .container .body .menu ul li a:before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background-color: var(--main-color);
+  display: none;
+}
+
+section .container .body .menu ul li a:hover {
+  color: var(--main-color);
+}
+
+section .container .body .menu ul li a:hover::before {
+  display: block;
+}
+
+section .container .body .menu ul li a i {
+  /* margin-right: 15px; */
+  padding-right: 10px;
+}
+
+section .container .body .content {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  margin: 50px 0;
+}
+
+section .container .body .content h4 {
+  width: fit-content;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--main-color);
+  position: relative;
+}
+
+section .container .body .content h4:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 40%;
+  height: 10px;
+  background-color: var(--main-color);
+  border-radius: 5px;
+}
+
+section .container .body .content p {
+  font-size: 16px;
+  line-height: 2;
+  color: var(--gray-text);
+  margin-right: 100px;
+}
+
+section .container .body .content p span {
+  font-weight: bold;
+}
+
+section .container .body .content a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
+  padding: 10px 20px;
+  background-color: var(--main-color);
+  color: var(--white);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+section .container .body .content a:hover {
+  background-color: #18b469;
+}
+
+section .container .body .content a i {
+  background-color: var(--white);
+  color: var(--main-color);
+  padding: 5px;
+  border-radius: 50%;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding: 10px;
+  }
+
+  section .container .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  section .container .header .logo .image {
+    display: none;
+  }
+
+  section .container .header .logo .name {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+
+  section .container .header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  section .container .body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  section .container .body .menu {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  section .container .body .menu ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  section .container .body .menu ul li {
+    margin: 0;
+  }
+
+  section .container .body .menu ul li a {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  section .container .body .menu ul li a::before {
+    display: none !important;
+  }
+
+  section .container .body .menu ul li a i {
+    margin-right: 5px;
+    padding-right: 0px;
+  }
+
+  section .container .body .content {
+    padding: 20px;
+    margin: 0px;
+  }
+
+  section .container .body .content p {
+    margin: 0px;
+  }
+
+  section .container .body .content .image {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  section .container .body .content .image {
+    display: none;
+  }
+}
